@@ -32,23 +32,6 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Define API routes here
 
-// app.post("/books/:id", (req, res) => {
-//   console.log("here");
-//   db.Book.create({
-//     title: "Book 1",
-//     authors: ["Aurthur 1", "Arthur 2"],
-//     description: "description 1",
-//     image: "none",
-//     link: "none"
-//   })
-//   .then(dbBook => {
-//     console.log(res);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });
-// });
-
 app.get("/api/books", (req, res) => {
   console.log("in books");
   db.Book.find({})
@@ -59,6 +42,25 @@ app.get("/api/books", (req, res) => {
       res.json(err);
     });
 });
+
+
+// app.post("/api/books", (req, res) => {
+//   console.log("in post");
+//   db.Book.create(
+//     {
+//       "title": "title 1",
+//       "authors": ["author 1a", "author 1b"],
+//       "description": "description 1",
+//       "image": "image 1",
+//       "link": "link 1"
+//     }
+//   )
+//     .then(dbBook => {
+//       console.log(dbBook);
+//       res.json(dbBook)
+//     })
+//     .catch(err => res.status(422).json(err));
+// });
 
 app.get("/minsert", (req, res) => {
   console.log("in insert");
