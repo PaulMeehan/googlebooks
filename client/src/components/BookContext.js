@@ -1,9 +1,10 @@
 import React from "react";
 
 const BookContext = React.createContext({
-  currentPage: "search",
+  currentPage: "saved",
   books: [],
-  onClick: () => undefined
+  setPage: () => undefined,
+  updateBooks: () => undefined
 });
 
 export default BookContext;

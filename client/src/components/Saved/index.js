@@ -4,15 +4,16 @@ import BookSaved from "../BookSaved";
 
 function Saved () {
   return (
-    <div class="container">
-      <div class="row">
-        <div class="col col-md-1">
+    <div className="container">
+      <div className="row">
+        <div className="col col-md-1">
           {/* blank */}
+          In saved page
         </div>
-        <div class="col col-md-10">
+        <div className="col col-md-10">
           <BookSaved />
         </div>
-        <div class="col col-md-1">
+        <div className="col col-md-1">
           {/* blank */}
         </div>
       </div>

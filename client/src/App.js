@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
@@ -10,10 +11,13 @@ import BookContext from "./components/BookContext";
 class App extends React.Component {
   
   state = {
-    currentPage: "search",
+    currentPage: "saved",
     books: [],
-    onClick: (currentPage) => {
+    setPage: (currentPage) => {
       this.setState({ currentPage });
+    },
+    updateBooks: (books) => {
+      this.setState({ books })
     }
   };
 
@@ -26,23 +30,17 @@ class App extends React.Component {
   };
 
   renderPage = () => {
-    switch (this.state.currentPage) {
-      case "search":
-          return <Search />;
-        break;
-      case "saved":
-          return <Saved />;
-        break;
-      default:
-        return <Search />;
-    };
+    if (this.state.currentPage === "saved") {
+      return <Saved />
+    } else {
+      return <Search />
+    }
   };
 
   getBooks = () => {
     axios.get(
       "/api/books"
     ).then((res) => {
-      console.log(res);
       this.setState({
         books: res.data
       });

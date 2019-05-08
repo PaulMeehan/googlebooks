@@ -7,8 +7,8 @@ function Nav () {
       {bookstate => (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
           Google Books
-          <button class="btn btn-primary" onClick={ () => bookstate.onClick("search")}>Search</button>
-          <button class="btn btn-primary" onClick={ () => bookstate.onClick("saved")}>Saved</button>
+          <button className="btn btn-primary" onClick={ () => bookstate.setPage("search")}>Search</button>
+          <button className="btn btn-primary" onClick={ () => bookstate.setPage("saved")}>Saved</button>
         </nav>
       )}
     </BookContext.Consumer>

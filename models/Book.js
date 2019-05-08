@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+console.log("in book model");
 const Schema = mongoose.Schema;
 
 const BookSchema = new Schema({
